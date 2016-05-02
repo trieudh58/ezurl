@@ -16,3 +16,14 @@ Route::get('/', function () {
 });
 
 Route::resource('link', 'LinkController');
+
+Route::get('/{hash}', function ($hash) {
+    $hash = env('APP_URL').'/'.$hash;
+    $link = \App\Link::where('hash', $hash)->first();
+    if ($link) {
+        return redirect($link->url);
+    }
+    else {
+        return abort(404);
+    }
+});

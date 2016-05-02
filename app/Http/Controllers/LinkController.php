@@ -49,7 +49,8 @@ class LinkController extends Controller
      */
     public function show($id)
     {
-        return Link::findOrFail($id);
+        $url = Link::where('url', $id);
+        return $url;
     }
 
     /**
