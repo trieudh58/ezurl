@@ -5,17 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Link;
 
 class LinkController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the links.
      *
-     * @return \Illuminate\Http\Response
+     * @return \App\Link
      */
     public function index()
     {
-        //
+        $links = Link::all();
+        return $links;
     }
 
     /**
@@ -40,14 +42,14 @@ class LinkController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified link.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \App\Link
      */
     public function show($id)
     {
-        //
+        return Link::findOrFail($id);
     }
 
     /**
