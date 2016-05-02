@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Link;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        for($i = 0; $i < 10; $i++) {
+            $link = new Link();
+            $link->url = 'http://trieudh.me/department/'.$i.'/detail';
+            $link->hash = Str::random(6);
+            $link->save();
+        }
     }
 }
