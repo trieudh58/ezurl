@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         for($i = 0; $i < 10; $i++) {
             $link = new Link();
             $link->url = 'http://trieudh.me/department/'.$i.'/detail';
-            $link->hash = 'ezurl.cf/'.Str::random(6);
+            $link->hash = env('APP_URL').'/'.Str::random(6);
             $link->save();
         }
     }

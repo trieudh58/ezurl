@@ -64,7 +64,7 @@
                         <tr ng-repeat="link in links">
                             <td><% link.id %></td>
                             <td><a href="<% link.url %>"><% link.url %></a></td>
-                            <td><a href="http://<% link.hash %>"><% link.hash %></a></td>
+                            <td><a href="<% link.hash %>"><% link.hash %></a></td>
                             <td></td>
                         </tr>
                     </tbody>
